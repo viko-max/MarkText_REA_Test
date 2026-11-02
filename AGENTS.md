@@ -141,7 +141,7 @@ npm run package      # 免安装打包到 dist/win-unpacked/
 
 ## 7. 版本库
 
-远程是 GitHub 私有仓库 `viko-max/MarkText_REA_Test`。只跟踪源码、文档、锁文件和小体积证据。下列内容留在本机，克隆后按本文重新获取或安装：
+远程是 GitHub 公开仓库 `viko-max/MarkText_REA_Test`。只跟踪源码、文档、锁文件和小体积证据。下列内容留在本机，克隆后按本文重新获取或安装：
 
 | 路径 | 原因 |
 | --- | --- |
