@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https: http:; font-src 'self' data:; connect-src 'self' ws://127.0.0.1:* ws://localhost:*; frame-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Lite Studio</title>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span class="brand-text">
+            <span class="brand-name">Markdown Lite Studio</span>
+            <span id="workspace-name" class="brand-workspace" hidden></span>
+          </span>
+        </div>
+
+        <div class="toolbar" role="toolbar" aria-label="主要操作">
+          <button id="open-workspace" class="tool-button" type="button">打开文件夹…</button>
+          <span class="toolbar-divider" aria-hidden="true"></span>
+          <button id="new-note" class="tool-button" type="button">新建笔记</button>
+          <button id="rename-document" class="tool-button" type="button">重命名</button>
+          <button id="find-in-document" class="tool-button" type="button">查找</button>
+          <button id="toggle-autosave" class="tool-button" type="button" aria-pressed="true">
+            自动保存：开
+          </button>
+          <span class="toolbar-divider" aria-hidden="true"></span>
+          <button id="toggle-graph" class="tool-button" type="button" aria-pressed="false">
+            关系图谱
+          </button>
+          <button id="toggle-theme-panel" class="tool-button" type="button" aria-pressed="false">
+            主题布局
+          </button>
+          <button id="export-html" class="tool-button tool-primary" type="button">导出 HTML</button>
+        </div>
+
+        <div class="topbar-meta">
+          <span id="env-badge" class="badge">…</span>
+          <span id="version-badge" class="badge badge-muted">v0.1.0</span>
+        </div>
+      </header>
+
+      <div id="workspace-shell" class="workspace">
+        <aside id="sidebar" class="sidebar" aria-label="文件与标签">
+          <div class="sidebar-tabs" role="tablist" aria-label="侧栏视图">
+            <button id="tab-files" class="sidebar-tab" role="tab" aria-selected="true" type="button">
+              文件
+            </button>
+            <button id="tab-open" class="sidebar-tab" role="tab" aria-selected="false" type="button">
+              已打开
+            </button>
+          </div>
+
+          <div id="tree-panel" class="sidebar-panel">
+            <p id="tree-empty" class="sidebar-hint">工作区里还没有 Markdown 或 HTML 文件。</p>
+            <ul id="file-tree" class="tree" role="tree" aria-label="工作区文件"></ul>
+          </div>
+
+          <div id="tabs-panel" class="sidebar-panel" hidden>
+            <ul id="document-tabs" class="doc-tabs" aria-label="已打开文档"></ul>
+          </div>
+
+          <div id="outline-left-host" class="outline-host"></div>
+        </aside>
+
+        <main id="main-area" class="main-area" data-view="split">
+          <section id="editor-column" class="pane editor-pane" aria-label="编辑器">
+            <div class="pane-header">
+              <div class="view-switch" role="group" aria-label="显示方式">
+                <button id="view-edit" class="view-button" type="button">编辑</button>
+                <button id="view-split" class="view-button" type="button" aria-pressed="true">
+                  分屏
+                </button>
+                <button id="view-preview" class="view-button" type="button">预览</button>
+              </div>
+            </div>
+            <div id="editor-host" class="editor-host"></div>
+          </section>
+
+          <section id="preview-column" class="pane preview-pane" aria-label="预览">
+            <div id="preview-host" class="preview-host"></div>
+          </section>
+
+          <section id="graph-host" class="pane graph-pane" aria-label="关系图谱"></section>
+        </main>
+
+        <aside id="rightbar" class="rightbar" aria-label="反链、大纲与主题">
+          <div id="backlinks-host" class="backlinks-host"></div>
+          <div id="outline-right-host" class="outline-host">
+            <section id="outline-section" class="outline" aria-label="大纲">
+              <h2 class="outline-title">大纲</h2>
+              <div id="outline-list" class="outline-list"></div>
+            </section>
+          </div>
+          <div id="theme-panel-host" class="theme-panel-host" hidden></div>
+        </aside>
+      </div>
+
+      <section id="welcome" class="welcome" aria-label="欢迎">
+        <div class="welcome-card">
+          <p class="eyebrow">本地 Markdown 工作区</p>
+          <h1>打开一个文件夹开始</h1>
+          <p class="welcome-text">
+            所有文件都保存在你选择的目录里，编辑器只读写该工作区。上次使用的文件夹会在启动时自动恢复。
+          </p>
+          <button id="welcome-open" class="primary-button" type="button">打开文件夹…</button>
+          <ul class="welcome-list">
+            <li>三栏布局：目录与标签、编辑与预览、反链与大纲</li>
+            <li>同源渲染管线：预览与导出的 HTML 完全一致</li>
+            <li>[[双链]]、反链与来自真实笔记索引的关系图谱</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="status-bar">
+        <span id="status-document" class="status-item">未打开工作区</span>
+        <span id="status-export" class="status-item">未导出</span>
+        <span id="status-message" class="status-item status-message" role="status" aria-live="polite"></span>
+        <button id="status-action" class="status-action" type="button" hidden>重新加载</button>
+        <span id="status-meta" class="status-item status-item-end"></span>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

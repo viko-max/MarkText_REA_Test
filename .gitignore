@@ -1,0 +1,26 @@
+# Regenerated or too large for GitHub. See AGENTS.md section 7.
+
+.cache/
+
+reference/
+
+tools/node/
+tools/rea/node_modules/
+
+evidence/marktext-v0.23.0-rea-evidence-bundle.json
+
+app/node_modules/
+app/out/
+app/dist/
+app/release/
+app/.runtime/
+app/.test-runtime/
+app/test-results/
+app/playwright-report/
+app/blob-report/
+app/coverage/
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log

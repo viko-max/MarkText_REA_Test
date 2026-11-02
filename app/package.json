@@ -1,0 +1,49 @@
+{
+  "name": "markdown-lite-studio",
+  "productName": "Markdown Lite Studio",
+  "version": "0.1.0",
+  "description": "Lightweight local Markdown editor with a secure Electron IPC boundary.",
+  "private": true,
+  "license": "MIT",
+  "author": "Markdown Lite Studio",
+  "main": "./out/main/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/electron-vite/bin/electron-vite.js dev",
+    "start": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/electron-vite/bin/electron-vite.js preview",
+    "build": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.node.json && C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.web.json && C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/electron-vite/bin/electron-vite.js build",
+    "typecheck": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.node.json && C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.web.json",
+    "test": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/vitest/vitest.mjs run",
+    "test:watch": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/vitest/vitest.mjs",
+    "test:e2e": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/@playwright/test/cli.js test",
+    "package": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.node.json && C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.web.json && C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/electron-vite/bin/electron-vite.js build && C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe ./node_modules/electron-builder/cli.js --win --dir",
+    "verify:node": "C:\\Users\\14698\\Desktop\\MarkText_REA_Test\\tools\\node\\node.exe scripts/verify-node.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6",
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "jsdom": "^26.1.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/search": "^6.7.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.15",
+    "chokidar": "^6.0.0",
+    "cytoscape": "^3.34.4",
+    "dompurify": "^3.4.17",
+    "marked": "^18.1.2",
+    "write-file-atomic": "^8.0.0"
+  }
+}

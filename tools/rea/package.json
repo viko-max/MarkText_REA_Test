@@ -1,0 +1,9 @@
+{
+  "name": "rea-local",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Isolated local install of rea-agents for this task (not global).",
+  "dependencies": {
+    "rea-agents": "6.8.0"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+out/
+dist/
+release/
+.runtime/
+.test-runtime/
+test-results/
+playwright-report/
+blob-report/
+coverage/
+*.log
+.DS_Store

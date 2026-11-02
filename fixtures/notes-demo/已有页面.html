@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>已有页面静态标题</title>
+    <style>
+      .existing-page { color: #123456; }
+    </style>
+  </head>
+  <body>
+    <h1 class="existing-page">已有 HTML 页面</h1>
+    <p id="existing-paragraph">这段静态内容用于验证 HTML 预览与源码切换。</p>
+    <script>
+      document.body.dataset.scriptExecuted = 'yes';
+      document.title = 'SCRIPT-EXECUTED';
+    </script>
+  </body>
+</html>

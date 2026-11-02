@@ -1,0 +1,16 @@
+appId: studio.markdownlite.app
+productName: Markdown Lite Studio
+directories:
+  output: dist
+files:
+  - out/**
+  - package.json
+  - "!**/*.map"
+asar: true
+npmRebuild: false
+win:
+  executableName: markdown-lite-studio
+  target:
+    - target: dir
+      arch:
+        - x64

@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "rea": {
+      "command": "C:/Users/14698/Desktop/MarkText_REA_Test/tools/node/node.exe",
+      "args": [
+        "C:/Users/14698/Desktop/MarkText_REA_Test/tools/rea/node_modules/rea-agents/scripts/rea.mjs",
+        "mcp"
+      ],
+      "cwd": "C:/Users/14698/Desktop/MarkText_REA_Test",
+      "env": {
+        "REA_MCP_INPUT_SCHEMA_PROFILE": "compact",
+        "TEMP": "C:/Users/14698/Desktop/MarkText_REA_Test/.cache/tmp",
+        "TMP": "C:/Users/14698/Desktop/MarkText_REA_Test/.cache/tmp",
+        "npm_config_cache": "C:/Users/14698/Desktop/MarkText_REA_Test/.cache/npm-cache",
+        "HOME": "C:/Users/14698/Desktop/MarkText_REA_Test/.cache/home",
+        "USERPROFILE": "C:/Users/14698/Desktop/MarkText_REA_Test/.cache/home",
+        "APPDATA": "C:/Users/14698/Desktop/MarkText_REA_Test/.cache/appdata",
+        "LOCALAPPDATA": "C:/Users/14698/Desktop/MarkText_REA_Test/.cache/localappdata",
+        "XDG_CACHE_HOME": "C:/Users/14698/Desktop/MarkText_REA_Test/.cache/xdg-cache"
+      },
+      "startupTimeoutMs": 60000,
+      "toolTimeoutMs": 900000
+    }
+  }
+}
